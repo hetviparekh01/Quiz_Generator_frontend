@@ -1,0 +1,80 @@
+<div class="d-flex">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light sidebar" style="width: 250px; height: 100vh;">
+        <div class="accordion" id="sidebarAccordion">
+            <div class="accordion-item no-arrow">
+                <div class="accordion-header">
+                    <a routerLink="/" class="nav-link accordion-button collapsed" routerLinkActive="">
+                        Dashboard
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="examHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#examCollapse" aria-expanded="false" aria-controls="examCollapse">
+                        Exam
+                    </button>
+                </h2>
+                <div id="examCollapse" class="accordion-collapse collapse" aria-labelledby="examHeading"
+                    data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a routerLink="/viewexam" class="nav-link" routerLinkActive="active">View
+                                    Exam</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="profileHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#profileCollapse" aria-expanded="false" aria-controls="profileCollapse">
+                        User
+                    </button>
+                </h2>
+                <div id="profileCollapse" class="accordion-collapse collapse" aria-labelledby="profileHeading"
+                    data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a routerLink="/user/" class="nav-link" routerLinkActive="active">View Profile</a>
+                            </li>
+                            <li class="nav-item" *ngIf="role==='admin'">
+                                <a routerLink="/user/viewuser" class="nav-link" routerLinkActive="active">View User</a>
+                            </li>
+                            <li class="nav-item" *ngIf="role==='admin'">
+                                <a routerLink="/user/adduser" class="nav-link" routerLinkActive="active">Add User</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" *ngIf="role==='admin'">
+                <h2 class="accordion-header" id="questionHeading">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#questionCollapse" aria-expanded="false" aria-controls="questionCollapse">
+                        Questions
+                    </button>
+                </h2>
+                <div id="questionCollapse" class="accordion-collapse collapse" aria-labelledby="questionHeading"
+                    data-bs-parent="#sidebarAccordion">
+                    <div class="accordion-body">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a routerLink="/question" class="nav-link" routerLinkActive="active">View Question</a>
+                            </li>
+                            <li class="nav-item">
+                                <a routerLink="/question/generatequestion" class="nav-link"
+                                    routerLinkActive="active">Add Question</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

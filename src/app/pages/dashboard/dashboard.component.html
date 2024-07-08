@@ -1,0 +1,8 @@
+<app-card [title]="'Average Score of User'" [value]="value" *ngIf="role==='user'"></app-card>
+<app-card [title]="'Total Exam given By User'" [value]="totalExamOfUser" *ngIf="role==='user'"></app-card>
+
+
+<app-card [title]="'Total User'" [value]="totalUser" *ngIf="role==='admin'"></app-card>
+<app-card [title]="'Total Exam'" [value]="totalExam" *ngIf="role==='admin'" ></app-card>
+
+
